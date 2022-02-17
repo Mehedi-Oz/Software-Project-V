@@ -12,7 +12,7 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-  background: url("../img/astronaut.jpg");
+  background: url("../img/astronaut2.jpg");
   background-size: cover;
   background-position-x: 20%;
   background-position-y: 20%;
@@ -39,8 +39,10 @@ nav {
   text-transform: uppercase;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
-  -webkit-transition: tranform 0.5s ease-in-out;
-  transition: tranform 0.5s ease-in-out;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
 }
 
 nav ul {
@@ -49,13 +51,13 @@ nav ul {
   margin-top: 8em;
 }
 
-nav a {
+nav ul a {
   color: black;
   padding: 0.75em 2em;
   display: block;
 }
 
-nav a:hover {
+nav ul a:hover {
   background: #ebebeb;
 }
 
@@ -75,7 +77,7 @@ header {
 }
 
 header svg {
-  width: 3em;
+  width: 2.3em;
   margin-top: -0.6em;
   cursor: pointer;
 }
@@ -93,12 +95,15 @@ h1 {
 section.hero {
   color: white;
   height: 90vh;
+  -webkit-animation: moveDown 1s ease-in-out forwards;
+          animation: moveDown 1s ease-in-out forwards;
+  opacity: 0;
 }
 
 section.hero .down-arrow {
   stroke: white;
   position: absolute;
-  bottom: 2em;
+  bottom: 8em;
   width: 1em;
   animation: moveArrow 1s alternate-reverse infinite;
 }
@@ -114,13 +119,25 @@ section.hero .down-arrow path {
   height: 11em;
 }
 
-.more-info .tittle {
+.more-info .title {
   font-weight: bold;
   font-size: 1.25rem;
 }
 
 .more-info .desc {
   line-height: 1.5rem;
+}
+
+.open-nav {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+@media only screen and (min-width: 680px) {
+  body {
+    margin: 1.5em 5em;
+    font-family: "Poppins", sans-serif;
+  }
 }
 
 @media only screen and (min-width: 920px) {
@@ -136,7 +153,7 @@ section.hero .down-arrow path {
     height: auto;
     background: none;
   }
-  nav svg.clsoe {
+  nav svg.close {
     display: none;
   }
   nav ul {
@@ -147,8 +164,8 @@ section.hero .down-arrow path {
   }
   nav ul a {
     color: white;
-    padding: .5em 1.5em;
-    font-size: .9rem;
+    padding: 0.5em 1.5em;
+    font-size: 0.9rem;
   }
   nav ul a:hover {
     background: none;
@@ -172,6 +189,9 @@ section.hero .down-arrow path {
     width: 40%;
     margin-bottom: 8em;
   }
+  section.hero .subhead {
+    margin-bottom: 3em;
+  }
   section.hero svg.down-arrow {
     stroke: black;
     position: unset;
@@ -185,12 +205,12 @@ section.hero .down-arrow path {
     -ms-grid-columns: (auto)[2];
         grid-template-columns: repeat(2, auto);
     gap: 3em;
-    margin-bottom: 25em;
+    margin-bottom: 8em;
   }
   .feature img {
     width: 25em;
   }
-  .feature .contet {
+  .feature .content {
     text-align: right;
     width: 25em;
   }
@@ -202,7 +222,7 @@ section.hero .down-arrow path {
     -ms-grid-column: 1;
     grid-area: left;
   }
-  .feature.left .contet {
+  .feature.left .content {
     text-align: left;
     width: 25em;
     -ms-grid-column-align: left;
@@ -226,8 +246,8 @@ section.hero .down-arrow path {
             clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
   }
   to {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 }
 
@@ -237,8 +257,8 @@ section.hero .down-arrow path {
             clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
   }
   to {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 }
 
@@ -261,6 +281,30 @@ section.hero .down-arrow path {
   to {
     -webkit-transform: translateY(0);
             transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes moveDown {
+  from {
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes moveDown {
+  from {
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
   }
 }
 /*# sourceMappingURL=main.css.map */
