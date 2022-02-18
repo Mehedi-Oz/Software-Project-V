@@ -130,7 +130,7 @@ img {
     height: var(--header-height);
     display: flex;
     justify-content: space-between;
-    align-self: center;
+    align-items: center;
     font-weight: var(--font-semi);
 }
 
