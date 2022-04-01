@@ -3,7 +3,7 @@
 :root {
     --header-height: 3rem;
     --font-semi: 600;
-}
+} 
 
 :root {
     --first-color: #4070f4;
@@ -11,7 +11,7 @@
 }
 
 :root {
-    --boby-font: "Poppins", snas-serif;
+    --boby-font: "Poppins", sans-serif;
     --big-font-size: 2 rem;
     --h2-font-size: 1.25rem;
     --normal-font-size: 0.938rem;
@@ -170,16 +170,17 @@ img {
     background-color: var(--first-color);
 }
 
-.nav__logo{
+.nav__logo {
     color: var(--second-color);
 }
 
-.nav__toggle{
+.nav__toggle {
     color: var(--second-color);
     font-size: 1.5rem;
     cursor: pointer;
 }
-.active::after{
+
+.active::after {
     position: absolute;
     content: "";
     width: 100%;
@@ -189,7 +190,6 @@ img {
     background-color: var(--first-color);
 }
 
-.show{
+.show {
     right: 0;
 }
-
